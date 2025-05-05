@@ -1,10 +1,9 @@
+
 {
   "version": 2,
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
+  "public": "build",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
