@@ -9,9 +9,14 @@
   "buildCommand": "npm install --legacy-peer-deps && npm run build",
   "outputDirectory": "build",
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  {
+    "src": "/(favicon\\.ico|manifest\\.json|logo192\\.png|logo512\\.png|robots\\.txt)",
+    "dest": "/$1"
+  },
+  {
+    "src": "/(.*)",
+    "dest": "/index.html"
+  }
+]
+
 }
