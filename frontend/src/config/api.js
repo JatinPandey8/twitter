@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const API_BASE_URL = "https://twitter-db.up.railway.app/"
+export const API_BASE_URL = "https://twitter-db.up.railway.app"
 // export const API_BASE_URL = "http://localhost:5454"
 
 // export const api = axios.create({
