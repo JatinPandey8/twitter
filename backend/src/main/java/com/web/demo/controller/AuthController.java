@@ -25,7 +25,12 @@ import com.web.demo.repository.UserRepository;
 import com.web.demo.response.AuthResponse;
 import com.web.demo.service.CustomUserDetailsServiceImplementation;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {
+    "http://localhost:3000",
+    "https://twitter-hazel-rho.vercel.app",
+    "https://twitter-jatinpandey8s-projects.vercel.app"
+})
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
