@@ -30,7 +30,6 @@ import com.web.demo.service.CustomUserDetailsServiceImplementation;
     "https://twitter-hazel-rho.vercel.app",
     "https://twitter-jatinpandey8s-projects.vercel.app"
 })
-
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
