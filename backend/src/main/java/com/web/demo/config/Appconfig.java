@@ -51,7 +51,7 @@ private CorsConfigurationSource corsConfigurationSource() {
 		@Override
 		public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
 CorsConfiguration cfg = new CorsConfiguration();
-cfg.setAllowedOrigins(List.of("https://twitter-hazel-rho.vercel.app"));
+cfg.setAllowedOrigins(List.of("https://twitter-jatinpandey8s-projects.vercel.app", "https://twitter-hazel-rho.vercel.app"));
 cfg.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 cfg.setAllowedHeaders(List.of("*"));
 cfg.setAllowCredentials(true);
