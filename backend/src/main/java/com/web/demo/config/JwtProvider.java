@@ -95,13 +95,16 @@ import io.jsonwebtoken.security.Keys;
 public class JwtProvider {
 
     public String generateToken(Authentication auth) {
-        UserDetails userDetails = (UserDetails) auth.getPrincipal();
+        // UserDetails userDetails = (UserDetails) auth.getPrincipal();
+        String userDetails = auth.getName();
 
         SecretKey key = Keys.hmacShaKeyFor(Base64.getDecoder().decode(JwTConstant.SECRET_KEY));
 
         return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .claim("email", userDetails.getUsername())
+                .setSubject(userDetails)
+                .claim("email", userDetails)
+                // .setSubject(userDetails.getUsername())
+                // .claim("email", userDetails.getUsername())
                 .claim("authorities", "ROLE_USER")
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 86400000))
