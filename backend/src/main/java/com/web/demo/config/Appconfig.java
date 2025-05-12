@@ -32,7 +32,7 @@ public class Appconfig {
 public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
 	http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 	.and().authorizeHttpRequests(auth -> auth
-		    .requestMatchers("/auth/**").authenticated()
+		    .requestMatchers("/auth/**").permitAll()
 		    .requestMatchers("/api/**").permitAll()
 		    .anyRequest().permitAll()
 		)
