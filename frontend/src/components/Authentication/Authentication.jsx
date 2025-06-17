@@ -2,22 +2,25 @@ import { Button, Grid } from '@mui/material'
 import { GoogleLogin } from '@react-oauth/google'
 import React, { useState } from 'react'
 import AuthModal from './AuthModal'
+import { useNavigate } from 'react-router-dom'; 
+
+
 
 export const Authentication = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const handleOpenAuthModal = () => setOpenAuthModal(true);
- 
   const handleOpenSignup = () => {
   navigate("/signup");
   setOpenAuthModal(true);
-};
-
 const handleOpenSignin = () => {
   navigate("/signin");
   setOpenAuthModal(true);
 };
 
+const navigate = useNavigate(); 
 const handleCloseAuthModal = () => setOpenAuthModal(false);
+ };
+
   return (
 
     <div>
