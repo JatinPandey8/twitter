@@ -1,3 +1,6 @@
+ 
+
+# Stage 1: Build the application using Maven
 FROM maven:3-eclipse-temurin-17 AS build
 
 # Set working directory
@@ -16,7 +19,7 @@ FROM eclipse-temurin:17-alpine
 WORKDIR /app
 
 # Copy the jar file from the build stage
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/twitter-yt-0.0.1-SNAPSHOT.jar app.jar
 
 # Expose the port your app runs on
 EXPOSE 8080
