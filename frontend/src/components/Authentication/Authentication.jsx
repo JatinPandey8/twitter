@@ -8,18 +8,22 @@ import { useNavigate } from 'react-router-dom';
 
 export const Authentication = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
-  const handleOpenAuthModal = () => setOpenAuthModal(true);
-  const handleOpenSignup = () => {
-  navigate("/signup");
-  setOpenAuthModal(true);
-const handleOpenSignin = () => {
-  navigate("/signin");
-  setOpenAuthModal(true);
-};
+  const navigate = useNavigate(); 
 
-const navigate = useNavigate(); 
-const handleCloseAuthModal = () => setOpenAuthModal(false);
- };
+  const handleOpenSignup = () => {
+    navigate("/signup");
+    setOpenAuthModal(true);
+  };
+
+  const handleOpenSignin = () => {
+    navigate("/signin");
+    setOpenAuthModal(true);
+  };
+
+  const handleCloseAuthModal = () => setOpenAuthModal(false);
+
+
+
 
   return (
 
