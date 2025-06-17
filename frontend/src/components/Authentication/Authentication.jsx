@@ -27,8 +27,8 @@ export const Authentication = () => {
           <h1 className="font-bold text-3xl py-16">Join Twitter Now</h1>
           <div className="w-[60%]">
             <div className="w-full">
-              <GoogleLogin width={330} />
-              <p className="py-5 text-center">OR</p>
+              {/* <GoogleLogin width={330} /> */}
+              {/* <p className="py-5 text-center">OR</p> */}
               <Button onClick={handleOpenAuthModal} fullWidth variant="contained" size="large" sx={{
                 borderRadius: "29px",
                 py: "7px",
