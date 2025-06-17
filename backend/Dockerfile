@@ -1,28 +1,17 @@
- 
-
-# Stage 1: Build the application using Maven
+# Stage 1: Build with Maven
 FROM maven:3-eclipse-temurin-17 AS build
-
-# Set working directory
 WORKDIR /app
-
-# Copy all project files into the container
 COPY . .
+RUN ./mvnw clean package -DskipTests
 
-# Package the application (without running tests)
-RUN mvn clean package -DskipTests
-
-# Stage 2: Create a minimal runtime image
+# Stage 2: Runtime image
 FROM eclipse-temurin:17-alpine
-
-# Set working directory
 WORKDIR /app
 
-# Copy the jar file from the build stage
+# Copy the built JAR to current dir and rename it to app.jar
 COPY --from=build /app/target/twitter-yt-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose the port your app runs on
 EXPOSE 8080
 
-# Start the application
+# Start app
 ENTRYPOINT ["java", "-jar", "app.jar"]
