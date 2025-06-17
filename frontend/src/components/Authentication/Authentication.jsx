@@ -6,6 +6,17 @@ import AuthModal from './AuthModal'
 export const Authentication = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const handleOpenAuthModal = () => setOpenAuthModal(true);
+ 
+  const handleOpenSignup = () => {
+  navigate("/signup");
+  setOpenAuthModal(true);
+};
+
+const handleOpenSignin = () => {
+  navigate("/signin");
+  setOpenAuthModal(true);
+};
+
 const handleCloseAuthModal = () => setOpenAuthModal(false);
   return (
 
@@ -29,7 +40,7 @@ const handleCloseAuthModal = () => setOpenAuthModal(false);
             <div className="w-full">
               {/* <GoogleLogin width={330} /> */}
               {/* <p className="py-5 text-center">OR</p> */}
-              <Button onClick={handleOpenAuthModal} fullWidth variant="contained" size="large" sx={{
+              <Button onClick={handleOpenSignup} fullWidth variant="contained" size="large" sx={{
                 borderRadius: "29px",
                 py: "7px",
               }}>Create Account</Button>
@@ -39,7 +50,7 @@ const handleCloseAuthModal = () => setOpenAuthModal(false);
             <div className="mt-10">
               <h1 className="font-bold text-xl mb-5"> Already have Account?</h1>
             </div>
-            <Button onClick={handleOpenAuthModal} fullWidth variant="outlined" size="large" sx={{
+            <Button onClick={handleOpenSignin} fullWidth variant="outlined" size="large" sx={{
               borderRadius: "29px",
               py: "7px",
             }}>  LOGIN  </Button>
