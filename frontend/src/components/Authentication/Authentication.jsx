@@ -6,7 +6,7 @@ import AuthModal from './AuthModal'
 export const Authentication = () => {
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const handleOpenAuthModal = () => setOpenAuthModal(true);
-  const handleCloseAuthModal = () => setOpenAuthModal(true);
+const handleCloseAuthModal = () => setOpenAuthModal(false);
   return (
 
     <div>
